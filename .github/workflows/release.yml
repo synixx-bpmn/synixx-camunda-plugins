@@ -1,0 +1,25 @@
+name: release
+on:
+  push:
+    tags: ['v*']
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: npm ci
+      - run: npm run build
+      - name: Zips je Plugin (Ordnername = Installations-Ordner)
+        run: |
+          mkdir -p out
+          for d in plugins/*/; do
+            n=$(basename "$d")
+            cp -r "$d/plugin" "out/cm-plugin_$n"
+            (cd out && zip -qr "cm-plugin_$n.zip" "cm-plugin_$n")
+          done
+      - uses: softprops/action-gh-release@v2
+        with: { files: 'out/*.zip' }

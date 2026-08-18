@@ -1,0 +1,17 @@
+{
+  "name": "synixx-camunda-plugins",
+  "version": "1.0.0",
+  "description": "Synixx-Werkzeugfamilie: Camunda-Modeler-Plugins (BPMN-Notation, FEEL/DMN-Referenz, XML-Werkzeuge, Kommentare, Strukturgraph)",
+  "license": "MIT",
+  "type": "commonjs",
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.0"
+  },
+  "dependencies": {
+    "camunda-modeler-plugin-helpers": "^6.0.0",
+    "viz.js": "^1.8.2"
+  }
+}

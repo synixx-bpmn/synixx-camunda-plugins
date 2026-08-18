@@ -1,0 +1,17 @@
+/* Toolbar-Pille fuer den Graphviz-Strukturvisualisierer.
+   Eigentliches Panel-Layout (qs-cm-popup-pinned, Header/Body/Buttons) liegt im
+   gebuendelten qsCommentMedia und wird per ensureStyles() injiziert.
+   Die Knoten-/Pfeil-/DOT-Highlighter-Klassen kommen aus dem bpmn-graphviz.js-
+   selber-ensureStyle() in den DOM (siehe client.bundle.js). */
+
+.qs-cm-pill-graphviz[aria-pressed="true"] {
+    background: #16a34a;
+    border-color: #14532d;
+    color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+.qs-cm-pill-graphviz[aria-pressed="true"]:hover {
+    background: #15803d;
+    color: #fff;
+}

@@ -1,0 +1,15 @@
+/* Toolbar-Pille fuer die XML-Vollansicht. Panel-Layout (qs-cm-popup-pinned)
+   liegt im gebuendelten qsCommentMedia, Tree-Styles im bpmn-xml-full.js
+   ensureStyle() — werden zur Laufzeit injiziert. */
+
+.qs-cm-pill-xmlfull[aria-pressed="true"] {
+    background: #60a5fa;
+    border-color: #1d4ed8;
+    color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+.qs-cm-pill-xmlfull[aria-pressed="true"]:hover {
+    background: #3b82f6;
+    color: #fff;
+}

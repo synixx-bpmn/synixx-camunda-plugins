@@ -1,0 +1,97 @@
+/* Marker (Eckbadge mit "!") und Hover-Tooltip fuer das Kommentar-Plugin.
+   Marker liegt als bpmn-js-Overlay im Diagram-Container und wird ueber
+   data-qs-elid mit dem zugehoerigen BPMN-Element verknuepft. */
+
+.qs-comment-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #fbbf24;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 1;
+    cursor: pointer;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35), 0 0 0 2px #fff;
+    user-select: none;
+    pointer-events: auto;
+}
+
+.qs-comment-tooltip {
+    position: fixed;
+    z-index: 99999;
+    max-width: 420px;
+    padding: 8px 10px;
+    background: rgba(20, 20, 20, 0.95);
+    color: #fff;
+    font-size: 13px;
+    line-height: 1.35;
+    border-radius: 6px;
+    border: 1px solid #fbbf24;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+    pointer-events: auto;  /* Bridge-Hover: Maus über Tooltip haelt ihn offen */
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    display: none;
+}
+
+/* Gemeinsame Pill-Toolbar oben rechts im bpmn-js-Canvas — auch in
+   cm-plugin_tokenspur/style.css definiert. Doppelung ist beabsichtigt
+   (Plugins koennen unabhaengig voneinander geladen sein).
+   right:240px laesst die Modeler-eigenen Header-Buttons (Properties-Panel-
+   Toggle, Vorschau-Toggle etc.) frei. */
+.qs-cm-pills {
+    position: absolute;
+    top: 16px;
+    right: 240px;
+    display: flex;
+    gap: 6px;
+    z-index: 100;
+    pointer-events: auto;
+}
+.qs-cm-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    height: 28px;
+    border-radius: 18px;
+    border: 1.5px solid #999;
+    background: rgba(255, 255, 255, 0.92);
+    color: #444;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+    backdrop-filter: blur(2px);
+    user-select: none;
+}
+.qs-cm-pill:hover {
+    border-color: #555;
+    color: #111;
+}
+.qs-cm-pill .qs-cm-pill-icon {
+    font-size: 14px;
+    line-height: 1;
+    filter: grayscale(0.6) opacity(0.7);
+    transition: filter 0.15s;
+}
+.qs-cm-pill[aria-pressed="true"] .qs-cm-pill-icon { filter: none; }
+
+/* Comments-Variante: amber-deckend */
+.qs-cm-pill-comments[aria-pressed="true"] {
+    background: #fbbf24;
+    border-color: #b45309;
+    color: #1a1a1a;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+.qs-cm-pill-comments[aria-pressed="true"]:hover {
+    background: #f59e0b;
+    color: #000;
+}

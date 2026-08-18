@@ -1,0 +1,14 @@
+/* Toolbar-Pille fuer die BPMN-Notationsübersicht. Panel-Layout und Katalog
+   liegen im gebuendelten bpmn-notation.js (siehe client.bundle.js). */
+
+.qs-cm-pill-notation[aria-pressed="true"] {
+    background: #93c5fd;
+    border-color: #1d4ed8;
+    color: #0f172a;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+.qs-cm-pill-notation[aria-pressed="true"]:hover {
+    background: #60a5fa;
+    color: #fff;
+}
